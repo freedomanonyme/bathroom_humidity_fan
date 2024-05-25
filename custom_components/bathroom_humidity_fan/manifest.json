@@ -1,0 +1,10 @@
+{
+  "domain": "bathroom_humidity_fan",
+  "name": "Bathroom Humidity Fan",
+  "version": "1.0.0",
+  "documentation": "https://github.com/your_username/bathroom_humidity_fan",
+  "dependencies": [],
+  "codeowners": ["@freedomanonyme"],
+  "requirements": [],
+  "config_flow": true
+}
