@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer le Ventilateur d'Humidité de la Salle de Bain",
+        "description": "Veuillez entrer les informations suivantes pour configurer l'intégration.",
+        "data": {
+          "name": "Nom",
+          "sensor_entity_id": "ID de l'entité du capteur d'humidité",
+          "fan_entity_id": "ID de l'entité du ventilateur"
+        }
+      }
+    },
+    "error": {
+      "name_exists": "Une instance avec ce nom existe déjà."
+    }
+  }
+}
