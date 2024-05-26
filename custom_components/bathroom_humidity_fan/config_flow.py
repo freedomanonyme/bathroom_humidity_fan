@@ -28,17 +28,14 @@ class BathroomHumidityFanConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 _LOGGER.debug("Creating entry with data: %s", user_input)
                 return self.async_create_entry(title=user_input["name"], data=user_input)
 
+        data_schema = vol.Schema({
+            vol.Required("name", description={"suggested_value": "Bathroom Fan Name"}): str,
+            vol.Required("sensor_entity_id", description={"suggested_value": "Sensor Entity ID"}): str,
+            vol.Required("fan_entity_id", description={"suggested_value": "Fan Entity ID"}): str,
+        })
+
         return self.async_show_form(
             step_id="user",
-            data_schema=vol.Schema({
-                vol.Required("name"): str,
-                vol.Required("sensor_entity_id"): str,
-                vol.Required("fan_entity_id"): str,
-            }),
-            errors=errors,
-            description_placeholders={
-                "name": "Nom de cette instance de ventilateur d'humidité",
-                "sensor_entity_id": "ID de l'entité du capteur d'humidité (par ex. sensor.salle_de_bain_humidite)",
-                "fan_entity_id": "ID de l'entité du ventilateur (par ex. switch.salle_de_bain_ventilateur)"
-            }
+            data_schema=data_schema,
+            errors=errors
         )
